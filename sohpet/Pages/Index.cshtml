@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Tuzla Meslek Dedikodu";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Tuzla Meslek Dedikodu</h1>
+    <form method="post">
+        <input type="text" name="isim" value="@Model.isim" placeholder="Nickname" />
+        <input type="text" name="mesaj" value="" placeholder="Mesajınız" />
+        <input type="submit" value="Yolla" />
+    </form>
+</div>
+<div style="white-space: pre-line; margin-top: -200px;">
+    <span id="icerik"></span>
+</div>
+
+<script>
+    $(document).ready(function () {
+        setInterval(function () {
+            $('#icerik').load('/sohbet')
+        }, 2000);
+    });
+</script>
